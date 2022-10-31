@@ -1,0 +1,275 @@
+* {
+    font-family: sans-serif;
+}
+
+.Container {
+    width: 720px;
+    margin-top: 22px;
+    margin-left: 12%;
+}
+
+.bn {
+    font-size: 19px;
+    border: 3px solid black;
+}
+
+th {
+    margin-left: 23px;
+    height: 30px;
+    text-align: center;
+}
+.btn {
+    margin-left: 505px;
+    font-size: 21px;
+    height: 65px;
+}
+.new {
+    border: 3px solid black;
+    font-size: 15px;
+    color: white;
+    background-color: dimgrey;
+    cursor: pointer;
+}
+table,
+td,
+th {
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    height: 30px;
+    word-wrap: break-word;
+}
+
+.btnn {
+    height: 27px;
+    width: 60px;
+    border: 1px solid black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*model box  */
+
+.modal {
+    margin-left: 604px;
+    position: absolute;
+    width: 600px;
+    position: absolute;
+    height: 600px;
+    left: 30%;
+    margin-top: 9%;
+
+    visibility: hidden;
+
+    background-color: lemonchiffon;
+}
+/* pup up */
+.openModal {
+    visibility: visible;
+    top: 50px;
+    margin-left: 59px;
+}
+
+.title {
+    margin-top: 32px;
+    font-size: 35px;
+    border-bottom: 3px solid black;
+}
+.close {
+    color: black;
+    font-size: 23px;
+    float: right;
+    margin-right: 21px;
+    cursor: pointer;
+}
+.text {
+    margin-left: 12px;
+}
+.inputFile {
+    padding-top: 11px;
+}
+.inputFileBox {
+    padding-top: 11px;
+}
+.inputFile span {
+    position: absolute;
+    margin-top: 29px;
+    right: 180px;
+    font-size: 14px;
+    color: red;
+}
+.inputFile span i {
+    color: seagreen;
+}
+
+input {
+    height: 50px;
+    width: 400px;
+    margin-top: 11px;
+    margin-left: 28px;
+    margin-bottom: 11px;
+    color: black;
+}
+label {
+    font-size: 19px;
+    padding-left: 29px;
+}
+
+.size {
+    height: 109px;
+    margin-left: 29px;
+    width: 400px;
+    border: 1px solid black;
+}
+.newADD {
+    display: flex;
+    justify-content: space-between;
+}
+.CancleBtn {
+    margin-left: 30px;
+    margin-top: 21px;
+    font-size: 19px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+.dataSave {
+    margin-right: 164px;
+    margin-top: 21px;
+    font-size: 19px;
+    cursor: pointer;
+    background-color: darkgreen;
+    color: white;
+}
+
+/* delete */
+
+.delete {
+    border: 2px solid black;
+    box-sizing: border-box;
+    height: 150px;
+    width: 400px;
+    margin-top: 90%;
+    visibility: hidden;
+    right: 140%;
+    background-color: antiquewhite;
+}
+
+p {
+    font-size: 24px;
+    color: darkslateblue;
+    text-align: center;
+    padding-top: 15px;
+}
+i {
+    color: red;
+    float: right;
+    font-size: 23px;
+    padding-top: 7px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.deletebtn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.No {
+    color: white;
+    height: 33px;
+    width: 40px;
+    font-size: 18px;
+    background-color: dimgray;
+    cursor: pointer;
+    margin-right: 80px;
+}
+.YES {
+    color: white;
+    height: 33px;
+    width: 50px;
+    font-size: 18px;
+    background-color: green;
+    cursor: pointer;
+}
+/* Pupup */
+.Modal1 {
+    position: absolute;
+    visibility: visible;
+    top: 30px;
+    margin-left: 21px;
+}
+
+/* Edit details side */
+.verticalLine {
+    position: absolute;
+    border-left: 1px solid black;
+    height: 500px;
+    margin-left: 40%;
+}
+
+.Edit {
+    position: absolute;
+    width: 500px;
+    float: right;
+    left: 60%;
+}
+.Update {
+    margin-left: 29px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.Reset {
+    margin-left: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.submitErr {
+    float: right;
+    margin-right: 280px;
+    color: red;
+}
+
+/* Edit details  validation*/
+.AddnameErr {
+    position: absolute;
+    margin-top: 29px;
+    right: 85px;
+    font-size: 18px;
+    color: red;
+}
+.AddnameErr i {
+    color: green;
+    margin-left: 59px;
+    position: absolute;
+}
+.AddemailErr {
+    position: absolute;
+    margin-top: 29px;
+    right: 100px;
+    font-size: 14px;
+    color: red;
+}
+.AddemailErr i {
+    color: green;
+    margin-left: 75px;
+    position: absolute;
+}
+.ADDAddressErr {
+    position: absolute;
+    margin-top: 69px;
+    right: 100px;
+    font-size: 14px;
+    color: red;
+}
+.ADDAddressErr i {
+    color: green;
+    margin-left: 75px;
+    position: relative;
+    position: absolute;
+}
+
+.updateErr {
+    color: red;
+    margin-left: 40%;
+}
