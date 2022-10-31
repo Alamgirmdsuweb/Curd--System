@@ -30,7 +30,8 @@ const AddressErr = document.getElementById("AddressErr");
 
 let url = "https://jsonplaceholder.typicode.com/users";
 
-const arrayFromApi = [];
+let arrayFromApi = [];
+console.log("arrayFromApi",arrayFromApi);
 let dataForTable = [];
 let num = "";
 let editId = "";
@@ -43,7 +44,7 @@ const buildTable = (data) => {
                 <td>${users.name}</td>
                 <td>${users.email}</td>
                 <td>${users.address.city}</td>
-                <td><button class="btnn" id="editbtn"onclick="editbtn(${
+                <td><button class="btnn" id="editbtn${i + 1}"onclick="editbtn(${
                     users.id
                 })">Edit</button></td>
                 <td><button class="btnn" id="deletbtn" onclick="Deletbtn(${
@@ -62,17 +63,20 @@ window.onload = function () {
         })
         .then((objectData) => {
             editId = 1;
+            console.log(objectData);
             // onload first row show  in edit details
 
+           
+
+            arrayFromApi=objectData;
+            
+            dataForTable = objectData;
+            buildTable(objectData);
             iName.value = objectData[0].name;
 
             iEmail.value = objectData[0].email;
 
             textarea.value = objectData[0].address.city;
-
-            arrayFromApi.push(objectData);
-            dataForTable = objectData;
-            buildTable(objectData);
         });
 };
 
@@ -124,8 +128,7 @@ function Save() {
                 UserName.value = "";
                 Email.value = "";
                 textArea.value = "";
-                // create  value add id Edit details
-                
+               // create  value add id Edit details 
                 iName.value = dataForTable[0].name;
 
                 iEmail.value = dataForTable[0].email;
@@ -166,14 +169,14 @@ function Deletbtn(id) {
     dltPupup.classList.add("Modal1");
 }
 
-function deletCon() {
+function deletConfirm() {
     const newValue = dataForTable.filter(
         (newValue, index) => newValue.id != num
     );
     dltPupup.classList.remove("Modal1");
 
     dataForTable = newValue;
-    arrayFromApi[0] = newValue;
+    arrayFromApi = newValue;
 
     if (newValue.length > 0) {
         iName.value = newValue[0].name;
@@ -204,9 +207,11 @@ function remove() {
 }
 
 function editbtn(id) {
-    const foundObj = arrayFromApi[0].find((item, i) => {
+    console.log("id",id);
+    const foundObj = arrayFromApi.find((item, i) => {
         return item.id == id;
     });
+   
     editId = id;
 
     iName.value = foundObj.name;
@@ -226,7 +231,7 @@ function update() {
         AddvalidEmail("iEmail") &&
         AddvalidAddress("textarea");
     if (Input) {
-        const foundObj = arrayFromApi[0].find((item, i) => {
+        const foundObj = arrayFromApi.find((item, i) => {
             return item.id == editId;
         });
 
@@ -234,7 +239,7 @@ function update() {
         foundObj.email = document.querySelector(".Email").value;
         foundObj.address.city = document.getElementById("textarea").value;
 
-        buildTable(arrayFromApi[0]);
+        buildTable(arrayFromApi);
     } else {
         updateEr.innerHTML = "All fields are required...";
         setTimeout(function () {
@@ -251,7 +256,7 @@ function update() {
 // Reset table
 
 function clearFuncunction() {
-    const res = arrayFromApi[0].find((item, i) => {
+    const res = arrayFromApi.find((item, i) => {
         return item.id == editId;
     });
 

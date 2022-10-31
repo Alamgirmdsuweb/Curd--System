@@ -127,7 +127,7 @@
                                 class="YES"
                                 type="yes"
                                 id="yes"
-                                onclick="deletCon()"
+                                onclick="deletConfirm()"
                             >
                                 YES
                             </button></span
@@ -138,22 +138,28 @@
                
                 <!-- create table -->
             </div>
+
             <table id="table" class="table">
-                <tr>
+                <div>
                     <th colspan="6">
-                        UserList
-                        <span class="btn"
-                            ><button
-                                type="button"
-                                class="new"
-                                id="new"
-                                onclick="openPopup()"
-                            >
-                                + New
-                            </button></span
-                        >
-                    </th>
-                </tr>
+                    <span class="btn"><button type="button" class="new" id="new" onclick="openPopup()">
+                   
+                        + New
+                       </th>
+
+                    </button></span>
+                    <div>
+                    <tr>
+                        <th colspan="2">
+                            UserList
+                        </th>
+    
+                    </tr>
+                </div>
+                </div>
+               
+               
+           
 
                 <tr class="deletRow" id="deletRow">
                     <th>ID</th>
