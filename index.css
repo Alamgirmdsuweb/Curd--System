@@ -1,11 +1,17 @@
 * {
     font-family: sans-serif;
 }
+.btn {
+    margin-left: 505px;
+    font-size: 21px;
+    height: 65px;
+}
 
 .Container {
     width: 720px;
     margin-top: 22px;
-    margin-left: 12%;
+    margin-left: 10%;
+    /* position:relative; */
 }
 
 .bn {
@@ -18,17 +24,16 @@ th {
     height: 30px;
     text-align: center;
 }
-.btn {
-    margin-left: 505px;
-    font-size: 21px;
-    height: 65px;
-}
+
 .new {
     border: 3px solid black;
-    font-size: 15px;
+    font-size: 19px;
     color: white;
     background-color: dimgrey;
     cursor: pointer;
+    float: right;
+    margin-right: 12px;
+    margin-bottom: 30px;
 }
 table,
 td,
@@ -36,11 +41,23 @@ th {
     border: 3px solid black;
     border-collapse: collapse;
     text-align: center;
-    height: 30px;
+    height: 39px;
     word-wrap: break-word;
+    margin-left: 70px;
 }
+/* .create{
+    padding-top: 34px;
+    height: 300px;
+} */
 
-.btnn {
+.EditBtn {
+    height: 27px;
+    width: 60px;
+    border: 1px solid black;
+    font-size: 14px;
+    cursor: pointer;
+}
+.deleteBtn {
     height: 27px;
     width: 60px;
     border: 1px solid black;
@@ -204,14 +221,15 @@ i {
     position: absolute;
     border-left: 1px solid black;
     height: 500px;
-    margin-left: 40%;
+    margin-left: 55%;
+    margin-top: 40px;
 }
 
-.Edit {
+.EditDetails {
     position: absolute;
     width: 500px;
     float: right;
-    left: 60%;
+    left: 67%;
 }
 .Update {
     margin-left: 29px;

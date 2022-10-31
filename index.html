@@ -19,7 +19,7 @@
             <!-- Edit details side -->
 
 
-            <div class="Edit" id="Edit">
+            <div class="EditDetails" id="Edit">
                 <div class="title">Edit details</div>
                 <div class="inputFileBox">
                     <form id="editside">
@@ -88,7 +88,7 @@
                                 ><button
                                     class="Reset"
                                     id="Reset"
-                                    onclick=" clearFuncunction()"
+                                    onclick=" Reset()"
                                 >
                                     Reset 
                                 </button>
@@ -139,29 +139,29 @@
                 <!-- create table -->
             </div>
 
-            <table id="table" class="table">
-                <div>
-                    <th colspan="6">
-                    <span class="btn"><button type="button" class="new" id="new" onclick="openPopup()">
-                   
-                        + New
-                       </th>
-
-                    </button></span>
-                    <div>
-                    <tr>
-                        <th colspan="2">
-                            UserList
-                        </th>
-    
-                    </tr>
-                </div>
-                </div>
-               
-               
            
+            <table id="table" class="table">
+                <tr>
+                    
+                    <th colspan="2">
+                        UserList
+                    </th>
+                
+                       <div>
+                            <th colspan="4" class="btn">
+                                <span class="btn"><button type="button" class="new"id="new"
+                                    onclick="NewOpenPopup()"
+                                >
+                                + New
+                            </th>
+                            </button></span>
+                        
+                        </div>
+                    </tr>
+                   
+               
 
-                <tr class="deletRow" id="deletRow">
+                <tr class="createTable" id="createTable">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>

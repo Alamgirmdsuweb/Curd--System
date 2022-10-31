@@ -31,7 +31,7 @@ const AddressErr = document.getElementById("AddressErr");
 let url = "https://jsonplaceholder.typicode.com/users";
 
 let arrayFromApi = [];
-console.log("arrayFromApi",arrayFromApi);
+console.log("arrayFromApi", arrayFromApi);
 let dataForTable = [];
 let num = "";
 let editId = "";
@@ -44,10 +44,10 @@ const buildTable = (data) => {
                 <td>${users.name}</td>
                 <td>${users.email}</td>
                 <td>${users.address.city}</td>
-                <td><button class="btnn" id="editbtn${i + 1}"onclick="editbtn(${
-                    users.id
-                })">Edit</button></td>
-                <td><button class="btnn" id="deletbtn" onclick="Deletbtn(${
+                <td><button class="EditBtn" id="editbtn${
+                    i + 1
+                }"onclick="editbtn(${users.id})">Edit</button></td>
+                <td><button class="deleteBtn" id="deletbtn" onclick="Deletbtn(${
                     users.id
                 })">Delete</button></td>
                 </tr>`;
@@ -66,10 +66,8 @@ window.onload = function () {
             console.log(objectData);
             // onload first row show  in edit details
 
-           
+            arrayFromApi = objectData;
 
-            arrayFromApi=objectData;
-            
             dataForTable = objectData;
             buildTable(objectData);
             iName.value = objectData[0].name;
@@ -81,7 +79,7 @@ window.onload = function () {
 };
 
 // open modal NEW
-function openPopup() {
+function NewOpenPopup() {
     modal.classList.add("openModal");
 
     SaveData.disabled = false;
@@ -128,7 +126,7 @@ function Save() {
                 UserName.value = "";
                 Email.value = "";
                 textArea.value = "";
-               // create  value add id Edit details 
+                // create  value add id Edit details
                 iName.value = dataForTable[0].name;
 
                 iEmail.value = dataForTable[0].email;
@@ -207,11 +205,9 @@ function remove() {
 }
 
 function editbtn(id) {
-    console.log("id",id);
-    const foundObj = arrayFromApi.find((item, i) => {
-        return item.id == id;
-    });
-   
+    console.log("id", id);
+    const foundObj = arrayFromApi.find((item) => item.id == id);
+
     editId = id;
 
     iName.value = foundObj.name;
@@ -231,9 +227,7 @@ function update() {
         AddvalidEmail("iEmail") &&
         AddvalidAddress("textarea");
     if (Input) {
-        const foundObj = arrayFromApi.find((item, i) => {
-            return item.id == editId;
-        });
+        const foundObj = arrayFromApi.find((item) => item.id == editId);
 
         foundObj.name = document.querySelector(".Name").value;
         foundObj.email = document.querySelector(".Email").value;
@@ -255,10 +249,8 @@ function update() {
 
 // Reset table
 
-function clearFuncunction() {
-    const res = arrayFromApi.find((item, i) => {
-        return item.id == editId;
-    });
+function Reset() {
+    const res = arrayFromApi.find((item) => item.id == editId);
 
     iName.value = res.name;
 
