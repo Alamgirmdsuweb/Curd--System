@@ -43,7 +43,7 @@ const buildTable = (data) => {
                 <td>${users.name}</td>
                 <td>${users.email}</td>
                 <td>${users.address.city}</td>
-                <td><button class="EditBtn" id="editbtn${
+                <td><button class="EditBtn"id="editbtn${
                     i + 1
                 }"onclick="editbtn(${users.id})">Edit</button></td>
                 <td><button class="DeleteBtn" id="deletbtn" onclick="Deletbtn(${
@@ -182,13 +182,13 @@ function deletConfirm() {
         iEmail.value = newValue[0].email;
 
         textarea.value = newValue[0].address.city;
+        editId = newValue[0].id;
     }
     if (newValue.length == 0) {
         iName.value = "";
         iEmail.value = "";
         textarea.value = "";
 
-        
         EditnameErr.innerHTML = "";
         EditemailErr.innerHTML = "";
         EditAddressErr.innerHTML = "";
@@ -215,7 +215,7 @@ function editbtn(id) {
     iEmail.value = foundObj.email;
 
     textarea.value = foundObj.address.city;
-        EditvalidName("iName") &&
+    EditvalidName("iName") &&
         EditvalidEmail("iEmail") &&
         EditvalidAddress("textarea");
 }
