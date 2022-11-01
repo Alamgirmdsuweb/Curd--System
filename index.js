@@ -69,6 +69,7 @@ window.onload = function () {
 
             dataForTable = objectData;
             buildTable(objectData);
+
             iName.value = objectData[0].name;
 
             iEmail.value = objectData[0].email;
@@ -94,8 +95,10 @@ function closePopup() {
     AddressErr.innerHTML = "";
 }
 
+// updata data
 function Save() {
-    const validInput = validateName() && validateEmail() && validateAddress();
+    const validInput =
+        AddvalidateName() && AddvalidateEmail() && AddvalidateAddress();
     const UserName = document.getElementById("inputName");
     const Email = document.getElementById("inputEmail");
     const textArea = document.getElementById("inputField");
@@ -182,10 +185,10 @@ function deletConfirm() {
     }
     if (newValue.length == 0) {
         iName.value = "";
-
         iEmail.value = "";
-
         textarea.value = "";
+
+        
         EditnameErr.innerHTML = "";
         EditemailErr.innerHTML = "";
         EditAddressErr.innerHTML = "";
@@ -212,9 +215,9 @@ function editbtn(id) {
     iEmail.value = foundObj.email;
 
     textarea.value = foundObj.address.city;
-    EditvalidName("iName") &&
-    EditvalidEmail("iEmail") &&
-    EditvalidAddress("textarea");
+        EditvalidName("iName") &&
+        EditvalidEmail("iEmail") &&
+        EditvalidAddress("textarea");
 }
 // Edit detailes
 
@@ -329,7 +332,7 @@ function EditvalidAddress(addressField) {
 
 // Add details validation
 
-function validateName() {
+function AddvalidateName() {
     const correctway = /^[A-za-z]+$/;
     let name = document.getElementById("inputName").value;
 
@@ -351,7 +354,7 @@ function validateName() {
     }
 }
 
-function validateEmail() {
+function AddvalidateEmail() {
     let email = document.getElementById("inputEmail").value;
     const correctway = /^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,15}$/;
     if (email === "") {
@@ -372,7 +375,7 @@ function validateEmail() {
     return true;
 }
 
-function validateAddress() {
+function AddvalidateAddress() {
     let address = document.getElementById("inputField").value;
     if (address === "") {
         return false;
