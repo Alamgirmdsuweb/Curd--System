@@ -168,7 +168,7 @@ function Deletbtn(id) {
 
 function deletConfirm() {
     const newValue = dataForTable.filter(
-        (newValue, index) => newValue.id != num
+        (newValue) => newValue.id != num
     );
     dltPupup.classList.remove("Modal1");
 
