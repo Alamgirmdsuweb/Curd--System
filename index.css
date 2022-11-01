@@ -47,6 +47,7 @@ th {
     border: 1px solid black;
     font-size: 14px;
     cursor: pointer;
+    color: #ff9900;
 }
 .DeleteBtn {
     height: 27px;
@@ -54,6 +55,7 @@ th {
     border: 1px solid black;
     font-size: 14px;
     cursor: pointer;
+    color: red;
 }
 
 /*model box  */
