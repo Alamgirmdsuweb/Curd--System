@@ -19,9 +19,9 @@ const iName = document.getElementById("iName");
 const iEmail = document.getElementById("iEmail");
 const textarea = document.getElementById("textarea");
 const updateEr = document.getElementById("updateError");
-const AddnameErr = document.getElementById("AddnameErr");
-const AddemailErr = document.getElementById("AddemailErr");
-const ADDAddressErr = document.getElementById("ADDAddressErr");
+const EditnameErr = document.getElementById("EditnameErr");
+const EditemailErr = document.getElementById("EditemailErr");
+const EditAddressErr = document.getElementById("EditAddressErr");
 //  add details validation
 const nameErr = document.getElementById("nameErr");
 const emailErr = document.getElementById("emailErr");
@@ -31,7 +31,6 @@ const AddressErr = document.getElementById("AddressErr");
 let url = "https://jsonplaceholder.typicode.com/users";
 
 let arrayFromApi = [];
-console.log("arrayFromApi", arrayFromApi);
 let dataForTable = [];
 let num = "";
 let editId = "";
@@ -63,7 +62,7 @@ window.onload = function () {
         })
         .then((objectData) => {
             editId = 1;
-            console.log(objectData);
+
             // onload first row show  in edit details
 
             arrayFromApi = objectData;
@@ -189,9 +188,9 @@ function deletConfirm() {
         iEmail.value = "";
 
         textarea.value = "";
-        AddnameErr.innerHTML = "";
-        AddemailErr.innerHTML = "";
-        ADDAddressErr.innerHTML = "";
+        EditnameErr.innerHTML = "";
+        EditemailErr.innerHTML = "";
+        EditAddressErr.innerHTML = "";
     }
 
     buildTable(newValue);
@@ -205,7 +204,6 @@ function remove() {
 }
 
 function editbtn(id) {
-    console.log("id", id);
     const foundObj = arrayFromApi.find((item) => item.id == id);
 
     editId = id;
@@ -215,17 +213,17 @@ function editbtn(id) {
     iEmail.value = foundObj.email;
 
     textarea.value = foundObj.address.city;
-    AddvalidName("iName") &&
-        AddvalidEmail("iEmail") &&
-        AddvalidAddress("textarea");
+    EditvalidName("iName") &&
+        EditvalidEmail("iEmail") &&
+        EditvalidAddress("textarea");
 }
 // Edit detailes
 
-function update() {
+function updateValue() {
     const Input =
-        AddvalidName("iName") &&
-        AddvalidEmail("iEmail") &&
-        AddvalidAddress("textarea");
+        EditvalidName("iName") &&
+        EditvalidEmail("iEmail") &&
+        EditvalidAddress("textarea");
     if (Input) {
         const foundObj = arrayFromApi.find((item) => item.id == editId);
 
@@ -242,14 +240,14 @@ function update() {
 
         return false;
     }
-    AddnameErr.innerHTML = "";
-    AddemailErr.innerHTML = "";
-    ADDAddressErr.innerHTML = "";
+    EditnameErr.innerHTML = "";
+    EditemailErr.innerHTML = "";
+    EditAddressErr.innerHTML = "";
 }
 
 // Reset table
 
-function Reset() {
+function ResetValue() {
     const res = arrayFromApi.find((item) => item.id == editId);
 
     iName.value = res.name;
@@ -263,7 +261,7 @@ function Reset() {
 
 // Edit details validation
 
-function AddvalidName(fieldName) {
+function EditvalidName(fieldName) {
     const correctway = /^[A-za-z]+$/;
     let name = document.getElementById(fieldName).value;
 
@@ -271,21 +269,21 @@ function AddvalidName(fieldName) {
         return false;
     }
     if (name.length < 5) {
-        AddnameErr.innerHTML = "Minimum  5 characters";
+        EditnameErr.innerHTML = "Minimum  5 characters";
         return false;
     }
     if (name.length > 30) {
-        AddnameErr.innerHTML = " Maximun 20 characters";
+        EditnameErr.innerHTML = " Maximun 20 characters";
         return false;
     }
     if (name.match(correctway) === null || name.match(correctway)) {
-        AddnameErr.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        EditnameErr.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
 
         return true;
     }
 }
 
-function AddvalidEmail(fieldEmail) {
+function EditvalidEmail(fieldEmail) {
     const Email = document.getElementById(fieldEmail).value;
 
     const correctways = /^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,15}$/;
@@ -295,36 +293,37 @@ function AddvalidEmail(fieldEmail) {
         return false;
     }
     if (Email.length < 10) {
-        AddemailErr.innerHTML = "Minimum 10 characters";
+        EditemailErr.innerHTML = "Minimum 10 characters";
         return false;
     }
     if (Email.length > 50) {
-        AddemailErr.innerHTML = "Maximum 50 characters";
+        EditemailErr.innerHTML = "Maximum 50 characters";
     }
 
     if (!correctEmail) {
-        AddemailErr.innerHTML = "Email is Invalid";
+        EditemailErr.innerHTML = "Email is Invalid";
         return false;
     }
-    AddemailErr.innerHTML = '<i class="fa-sharp fa-solid fa-circle-check"></i>';
+    EditemailErr.innerHTML =
+        '<i class="fa-sharp fa-solid fa-circle-check"></i>';
     return true;
 }
 
-function AddvalidAddress(addressField) {
+function EditvalidAddress(addressField) {
     let address = document.getElementById(addressField).value;
 
     if (address === "") {
-        ADDAddressErr.innerHTML = "Please enter your address";
+        EditAddressErr.innerHTML = "Please enter your address";
     }
     if (address.length < 10) {
-        ADDAddressErr.innerHTML = "minimum 10 characters";
+        EditAddressErr.innerHTML = "minimum 10 characters";
         return false;
     }
     if (address.length > 50) {
-        ADDAddressErr.innerHTML = "maximum 50 characters";
+        EditAddressErr.innerHTML = "maximum 50 characters";
         return false;
     }
-    ADDAddressErr.innerHTML =
+    EditAddressErr.innerHTML =
         '<i class="fa-sharp fa-solid fa-circle-check"></i>';
     return true;
 }

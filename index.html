@@ -32,10 +32,10 @@
                             name="name"
                             placeholder="Enter your name...."
                             value=""
-                            onkeyup="AddvalidName('iName')"
+                            onkeyup="EditvalidName('iName')"
                         />
-                        
-                        <span  class="AddnameErr "id="AddnameErr"> </span>
+                      
+                        <span  class="EditnameErr "id="EditnameErr"> </span>
                        
 
                         <br />
@@ -53,9 +53,9 @@
                             placeholder="Enter Your Email.."
                             name="email"
                             value=""
-                            onkeyup="AddvalidEmail('iEmail')"
+                            onkeyup="EditvalidEmail('iEmail')"
                         />
-                        <span class="AddemailErr" id="AddemailErr"> </span>
+                        <span class="EditemailErr" id="EditemailErr"> </span>
 
                         <br/>
                        
@@ -69,11 +69,11 @@
                                 id="textarea"
                                 name="textarea"
                                 class="size"
-                                onkeyup="AddvalidAddress('textarea')"
+                                onkeyup="EditvalidAddress('textarea')"
                             >
                         </textarea>
 
-                        <span class="ADDAddressErr"id="ADDAddressErr"></span>
+                        <span class="EditAddressErr"id="EditAddressErr"></span>
                     </div>
                     
                         </form>
@@ -81,14 +81,14 @@
                             ><button
                                 class="Update"
                                 id="Update"
-                                onclick="update()"
+                                onclick="updateValue()"
                             >
                                 Update</button
                             ><span
                                 ><button
                                     class="Reset"
                                     id="Reset"
-                                    onclick=" Reset()"
+                                    onclick=" ResetValue()"
                                 >
                                     Reset 
                                 </button>
@@ -106,7 +106,7 @@
                 <span class="updateErr" id="updateError"></span>
 
               <!-- delete Button pup up -->
-                <div class="delete" id="delete">
+                <div class="deletePupUp" id="delete">
                     <span
                         ><i
                             class="fa-solid fa-circle-xmark"
@@ -140,24 +140,24 @@
             </div>
 
            
-            <table id="table" class="table">
+            <div class="create">
+                <table id="table" class="table">
                 <tr>
-                    
-                    <th colspan="2">
-                        UserList
+            <th colspan="2">
+                UserList
+            </th>
+        </div>
+               <div>
+                    <th colspan="4" >
+                       <span class="Newbtn"><button type="button" class="new"id="new"
+                            onclick="NewOpenPopup()"
+                        >
+                        + New
                     </th>
+                    </button></span>
                 
-                       <div>
-                            <th colspan="4" class="btn">
-                                <span class="btn"><button type="button" class="new"id="new"
-                                    onclick="NewOpenPopup()"
-                                >
-                                + New
-                            </th>
-                            </button></span>
-                        
-                        </div>
-                    </tr>
+                </div>
+            </tr>
                    
                
 
