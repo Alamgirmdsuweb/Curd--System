@@ -46,7 +46,7 @@ const buildTable = (data) => {
                 <td><button class="EditBtn" id="editbtn${
                     i + 1
                 }"onclick="editbtn(${users.id})">Edit</button></td>
-                <td><button class="deleteBtn" id="deletbtn" onclick="Deletbtn(${
+                <td><button class="DeleteBtn" id="deletbtn" onclick="Deletbtn(${
                     users.id
                 })">Delete</button></td>
                 </tr>`;

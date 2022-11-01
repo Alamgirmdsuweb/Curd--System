@@ -48,7 +48,7 @@ th {
     font-size: 14px;
     cursor: pointer;
 }
-.deleteBtn {
+.DeleteBtn {
     height: 27px;
     width: 60px;
     border: 1px solid black;
@@ -174,7 +174,7 @@ i {
     margin-right: 8px;
     cursor: pointer;
 }
-.deletebtn {
+.deletebtnCondition {
     display: flex;
     justify-content: space-evenly;
 }
