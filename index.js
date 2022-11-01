@@ -167,9 +167,7 @@ function Deletbtn(id) {
 }
 
 function deletConfirm() {
-    const newValue = dataForTable.filter(
-        (newValue) => newValue.id != num
-    );
+    const newValue = dataForTable.filter((newValue) => newValue.id != num);
     dltPupup.classList.remove("Modal1");
 
     dataForTable = newValue;
@@ -195,11 +193,12 @@ function deletConfirm() {
 
     buildTable(newValue);
 }
+// deletebtnCondition  pupup
 function No() {
     dltPupup.classList.remove("Modal1");
 }
 
-function remove() {
+function removeIcon() {
     dltPupup.classList.remove("Modal1");
 }
 
@@ -214,8 +213,8 @@ function editbtn(id) {
 
     textarea.value = foundObj.address.city;
     EditvalidName("iName") &&
-        EditvalidEmail("iEmail") &&
-        EditvalidAddress("textarea");
+    EditvalidEmail("iEmail") &&
+    EditvalidAddress("textarea");
 }
 // Edit detailes
 
